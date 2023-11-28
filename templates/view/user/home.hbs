@@ -1,0 +1,156 @@
+{{>header}}
+
+{{>navbar}}
+{{!-- {/* Hero secton start */} --}}
+<div class="home-layout">
+
+
+  <!-- Hero Section -->
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Welcome to My Blog</h1>
+      <p>Discover the latest articles and updates.</p>
+    </div>
+  </section>
+
+  {{!-- blog section start --}}
+
+  <section class="container">
+    <div class="row">
+      <div class="col-md-8">
+
+        <!-- Blog Posts Section -->
+        <div id="blogPostsSection">
+          {{#if Post.length}}
+          {{#each Post as |post|}}
+          <div class="card mb-4 ">
+
+            <img src="/userImage/{{post.image}}" class="card-img-top" alt="Image " />
+
+            <div class="like_icon"><img src="img/like-icon.png"></div>
+            <div class="card-body">
+              <h2 class="card-title title">{{post.title}}</h2>
+              <p class="card-text">{{post.content}}</p>
+              <p class="post-date">Published on: <span>{{post.Date}}</span></p>
+              <div class="share-buttons">
+                <div class="social-btn">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-website.com/blog-post-1"
+                    target="_blank" class=" p-1"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/intent/tweet?url=https://your-website.com/blog-post-1&text=Check%20out%20this%20blog%20post"
+                    target="_blank" class="p-1 "><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://your-website.com/blog-post-1&title=Blog%20Post%20Title&summary=Check%20out%20this%20blog%20post&source=Your%20Website"
+                    target="_blank" class=" p-1"> <i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="#" class=" text-danger instagram-button" data-title="Blog Post Title"
+                    data-image="img/img-10.png"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <!-- Social media sharing buttons -->
+                <div class="readmore ">
+                  <a href="/blog/{{post.id}}" class="btn btn-primary">Read More</a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          {{/each}}
+          {{else}}
+          <h1>Posts Are not available!</h1>
+          {{/if}}
+        </div>
+
+        <div id="load-more" class="btn">Load more</div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">About Me</h4>
+            <p class="card-text">I'm a passionate blogger sharing my thoughts and ideas with the world.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">Categories</h4>
+            <ul class="list-group">
+              <li class="list-group-item">Technology</li>
+              <li class="list-group-item">Travel</li>
+              <li class="list-group-item">Food</li>
+              <li class="list-group-item">Lifestyle</li>
+              <li class="list-group-item">Stock market</li>
+              <li class="list-group-item">Cricket</li>
+              <li class="list-group-item">Fashion</li>
+              <li class="list-group-item">Business</li>
+              <li class="list-group-item">Real State</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div id="recentPostsSection">
+        <h4>Recent Posts</h4>
+        <div class="d-md-flex justify-content-between border-1 border">
+          {{#each recentPosts}}
+          <div class="col-md-4 p-3">
+            <div class="card">
+              <img src="/userImage/{{image}}" class="card-img-top" alt="Image " />
+              <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-texts">{{content}}</p>
+                <div class="d-flex justify-content-between">
+                  <a class="card-link text-decoration-none text-dark">{{Date}}</a><!-- Use the field directly -->
+                  <a href="/blog/{{_id}}" class="card-link">Read More</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+  </section>
+
+  {{!-- footer sectoin start --}}
+  {{>footer}}
+  {{!-- footer sectoin end --}}
+  <script>
+
+
+    let loadmorebtn = document.querySelector("#load-more"); let currentItem = 3;
+    loadmorebtn.onclick = () => {
+      let boxes =
+        [...document.querySelectorAll(".container #blogPostsSection .card")]; for (var i =
+          currentItem; i < currentItem + 1; i++) {
+            boxes[i].style.display =
+            "inline-block";
+      } currentItem += 1;
+    };
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const cardTextElements = document.getElementsByClassName("card-text");
+      Array.from(cardTextElements).forEach(function (element) {
+        const content = element.textContent;
+        const maxLength = 300;
+        if (content.length > maxLength) {
+          element.textContent = content.slice(0, maxLength) + "...";
+
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const cardTextElements = document.getElementsByClassName("card-texts");
+      Array.from(cardTextElements).forEach(function (element) {
+        const content = element.textContent;
+        const maxLength = 80;
+        if (content.length > maxLength) {
+          element.textContent = content.slice(0, maxLength) + "...";
+
+        }
+      });
+    });
+
+  </script>
+  <script src="js/index.js"></script>

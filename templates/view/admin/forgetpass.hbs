@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta property="image" content="img/apple-touch-icon.png">
+   <meta name="author" content="Ankit gupta">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>WanderWords-food,health,travel,share market and meny more blog
+    </title>
+   <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+   <script src="https://kit.fontawesome.com/780468c39f.js" crossorigin="anonymous"></script>
+   <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/respo.css">
+    <link type="text/css" rel="stylesheet" href="css/forget.css">
+   <style>
+      .main-div {
+         flex-direction: column;
+         height: 100vh;
+         background:none;
+      }
+
+      form {
+         width: 30%;
+        
+         padding: 30px 20px !important;
+      }
+
+      @media(min-width: 740px) and (max-width: 900px) {
+
+         form {
+           width: 55%;
+           padding: 40px 20px !important;
+         }
+      }
+      @media(min-width: 200px) and (max-width: 345px) {
+         form {
+            width: 55%;
+            padding: 40px 20px !important;
+         }
+      }
+   </style>
+</head>
+
+<body style="  background-color: #1f2029; ">
+
+
+
+   <div class="signin-form-container justify-content-center align-content-center main-div">
+      <form class="signin-form" action=" " method="post">
+         <img src="img/logo.png" alt="logo" class=" mt-1 mb-2 rounded-2" width="130" />
+
+         <div class="form-group-login">
+            <input type="password" name="password" id="email" required placeholder="Enter password">
+            <input type="hidden" name="user_id" value="{{user_id}}">
+            <i class="fas fa-lock input-icon " style="top: 5.5px ; font-size: 19px; "></i>
+
+         </div>
+         <div class="mb-3 d-flex justify-content-center align-items-center">
+            <input class=" ps-1 buttons" type="submit" value="Reset password">
+         </div>
+
+      </form>
+
+   </div>
+
+</body>
+
+</html>

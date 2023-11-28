@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@700&family=Roboto&family=Roboto+Slab:wght@500&display=swap");
+
+.Forget {
+  margin-bottom: 6px;
+  margin-top: -13px;
+}
+.signin-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px 0;
+  background-color: #1f2029;
+  flex-direction: column;
+}
+
+.signin-form {
+  text-align: center;
+  background: #fff;
+  padding: 10px 20px;
+  padding-bottom: 13px;
+  border-radius: 8px;
+  border: 0px solid rgb(249, 249, 249);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #2a2b38;
+  background-image: url("../../img/pat.svg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+}
+
+.signin-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: white;
+}
+/* .signin-form img {
+	background: linear-gradient(60deg, #3e57d2 0%, #b95aeb 100%) !important;
+  } */
+
+.form-group-login {
+  margin-bottom: 15px;
+  color: #000;
+  position: relative;
+}
+
+.SignUp-page-link {
+  color: #102770;
+  background-color: #ffeaa7d7;
+  width: 100%;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 0.5rem;
+
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5px;
+  display: flex;
+
+  justify-content: center;
+}
+.SignUp-page-link:hover {
+  text-decoration: none;
+  color: #ffeba7 !important;
+  border: none;
+  background-color: #102770;
+}
+
+
+
+
+
+.form-group {
+  color: #000;
+  position: relative;
+}
+
+.form-control:focus {
+  color: #f8f9f9;
+  background-color: #1f2029;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="Number"],
+input[type="file"],
+.custom-file-upload {
+  width: 100%;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  padding-left: 27px !important;
+  padding: 0.7rem 0.7rem;
+  border: none;
+  appearance: textfield;
+  outline: none;
+  color: #c4c3ca;
+  background-color: #1f2029;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+  margin: 8px 0;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+  cursor: pointer;
+}
+
+.input-icon {
+  position: absolute;
+  top: 5.5px;
+  left: 4px;
+  height: 48px;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: left;
+  /* color: #f1bc0d; */
+  color: #38c822cb;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+input[type="submit"] {
+  width: 100%;
+
+  padding: 0.5rem;
+  background-color: #0a60b1;
+  border-radius: 8px;
+  border: none;
+  color: #fafafa;
+  margin: 0px;
+  margin-top: 5px;
+  background-color: #ffeaa7d7;
+  color: #102770;
+  transition: all 200ms linear;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+}
+input[type="submit"]:hover {
+  background-color: #102770;
+  color: #ffeba7;
+  border: none;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+.text {
+  font-size: 10px;
+  margin-top: 5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.form-text {
+  margin-top: -0.2rem;
+  font-size: 0.875em;
+  color: #f8fbfe;
+}
+
+
+@media (max-width: 835px) and (min-width: 833px) {
+  
+  .signin-form-container {
+    padding: 120.8px 0 !important;
+    height: auto;
+  }
+}
+@media (max-width: 885px) and (min-width: 600px) {
+  
+  .signin-form-container {
+    padding: 113.8px 0;
+    height: auto;
+  }
+}
+@media (max-width: 800px) and (min-width: 799px) {
+ 
+  .signin-form-container {
+    padding: 159px 0;
+    height: auto;
+  }
+}
+@media (max-width: 500px) {
+  
+  .signin-form-container {
+    padding: 30px 0;
+    height: auto;
+  }
+
+  .signin-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 450px) {
+  #emailHelp {
+    font-size: 12px;
+  }
+  .signin-form-container {
+    height: auto;
+  }
+}
+
+@media (max-width: 349px) {
+  
+  .signin-form {
+    width: 99%;
+  }
+}
+@media (max-width: 252px) {
+  #emailHelp {
+    font-size: 10px;
+  }
+}

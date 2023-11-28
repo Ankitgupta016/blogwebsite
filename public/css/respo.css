@@ -1,0 +1,123 @@
+
+@media screen and (max-width: 992px) {
+  .btn-login {
+    margin-left: auto;
+    position: absolute;
+    right: 55px;
+    top: 13.4px;
+  }
+
+  .navbar {
+    background: #000;
+    z-index: 999;
+    margin-bottom: 20px;
+    padding-right: 0rem;
+  padding-left: 0rem ;
+  }
+  .nav-item{
+    margin: 3px 5px;
+  }
+  .btn-login{
+
+    gap: 10px;
+    width: fit-content;
+  
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+
+    padding: 7px 10px;
+    margin-right: 0px !important;
+  }
+  .userdata img {
+    position: relative;
+top: -3px;
+left: 3px;
+  }
+ 
+
+
+  .logo {
+    position: relative;
+    right: 18px;
+  }
+  .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    }
+    .in{
+    
+      border-top: 1px solid rgb(204, 204, 204);
+    }
+}
+
+
+@media screen and (max-width: 740px) {
+ 
+  .font {
+    font-size: 16px;
+  }
+  .title{
+    padding-top: 0 !important;
+  }
+}
+@media screen and (max-width: 500px) {
+ 
+  .like_icon {
+    width: 100%;
+    float: left;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+    margin-bottom: -38px;
+  }
+}
+
+ @media (min-width: 200px) and (max-width: 336px){
+  .font {
+    font-size: 14.3px;
+  }
+} 
+@media (max-width: 370px){
+  .main-boxs .main-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax( 270px, 1fr));
+    gap: 20px;
+  }
+} 
+
+@media screen and (max-width: 318px) {
+  .button {
+    position: relative !important;
+    left: 12px !important;
+    top: -4px !important;
+  }
+  .btn-login {
+    
+    gap: 10px;
+    width: fit-content;
+ 
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .btn-login {
+    margin-left: auto;
+    position: absolute;
+    right: 41px;
+    top: 11px;
+  }
+  .logo {
+    position: relative;
+    right: 18px;
+  }
+  
+  .font {
+    font-size: 14px;
+  }
+  .top-header-block {
+  margin-right: 1.5rem;
+}
+}

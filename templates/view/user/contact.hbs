@@ -1,0 +1,125 @@
+{{>header}}
+
+{{>navbar}}
+
+
+<div class="container contact-info-1  mt-5 pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="wrapper">
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <div class="dbox w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="fa fa-map-marker"></span>
+              </div>
+              <div class="text">
+                <p><span>Address:</span> <span class="contact-add">Pahadi Chowk, Raipur, Chhattisgarh</span> </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="dbox w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="fa fa-phone"></span>
+              </div>
+              <div class="text">
+                <p><span>Phone:</span> <a href="tel:7489891592">+91 7489891592</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="dbox w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="fa fa-paper-plane"></span>
+              </div>
+              <div class="text">
+                <p><span>Email:</span> <a href="mailto:ankitgupta46178@gmail.com">ankitgupta46178@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="dbox w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="fa fa-globe"></span>
+              </div>
+              <div class="text">
+                <p><span>Website</span> <a href="WWW.WanderWords.in">WanderWords.in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-6">
+            <h3 class="heading mb-3">Let's talk about everything!</h3>
+            <p>Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to
+              you within a matter of hours to help you.</p>
+            <p><img src="img/undraw-contact.svg" alt="Image" class="img-fluid"></p>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-wrap w-100">
+              <h3 class="mb-4">Send Us A Message</h3>
+              <div id="form-message-warning  " class="mb-3 text-success ">{{message}}</div>
+             
+             
+              <form method="POST" action="/contact" id="contactForm" name="contactForm" class="contactForm"
+                novalidate="novalidate">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label">Full Name</label>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Name"
+                        aria-invalid="true" {{!-- value="{{user.name}}" --}}>
+                      <span id="name-error" class="error"></span>
+                      <span id="name-success" class="success"></span>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label">Email Address</label>
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" {{!--
+                        value="{{user.email}}" --}} aria-invalid="true">
+                      <span id="email-error" class="error"></span>
+                      <span id="email-success" class="success"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="label">Subject</label>
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                        aria-invalid="true">
+                      <label id="subject-error" class="error" style="display: none;">Please enter your
+                        Subject</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="label">Message</label>
+                      <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                        placeholder="Message" aria-invalid="true"></textarea>
+                      <label id="message-error" class="error" for="message" style="display: none;">Please enter a
+                        message</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group py-4">
+                      <input type="submit" value="Send Message" class="btn btn-primary">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{{>footer}}
+<script src="js/contact.js"></script>

@@ -1,0 +1,68 @@
+{{>header}}
+{{>navbar}}
+
+<div class="mt-4 pt-5"></div>
+<div class="container main-boxs m-auto">
+
+    
+<div class="main-box">
+{{#if Post.length}}
+  {{#each Post as |post|}}
+    <div class="box">
+      <div class="card mb-1">
+       
+        <img src="/userImage/{{post.image}}" class="card-img-top" alt="Image " />
+        <div class="like_icon"><img src="img/like-icon.png" /></div>
+        <div class="card-body">
+          <h2 class="card-title title">{{post.title}}</h2>
+         
+          <p class="card-text">{{post.content}}</p>
+          <p class="post-date">Published on: <span >{{post.Date}}</span></p>
+         
+          <div class="share-buttons">
+            <div class="social-btn">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-website.com/blog-post-1" target="_blank" class="p-1"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?url=https://your-website.com/blog-post-1&text=Check%20out%20this%20blog%20post" target="_blank" class="p-1"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://your-website.com/blog-post-1&title=Blog%20Post%20Title&summary=Check%20out%20this%20blog%20post&source=Your%20Website" target="_blank" class="p-1"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="text-danger instagram-button" data-title="{{post.title}}" data-image="img/img-10.png"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="readmore ">
+              <a href="/blog/{{post.id}}" class="btn btn-primary ">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <h1>Posts Are not available!</h1>
+{{/if}}
+
+</div>
+
+  <div id="load-more" class="btn">Load more</div>
+</div>
+
+{{>footer}}
+<script>
+
+  let loadmorebtn = document.querySelector("#load-more"); let currentItem = 3;
+  loadmorebtn.onclick = () => { let boxes =
+  [...document.querySelectorAll(".main-boxs .main-box .box")]; for (var i =
+  currentItem; i < currentItem + 3; i++) { boxes[i].style.display =
+  "inline-block"; } currentItem += 3; }; 
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const cardTextElements = document.getElementsByClassName("card-text");
+    Array.from(cardTextElements).forEach(function(element) {
+      const content = element.textContent;
+      const maxLength = 100;
+      if (content.length > maxLength) {
+        element.textContent = content.slice(0, maxLength) + "...";
+
+      }
+    });
+  });
+</script>
+<script src="js/index.js"></script>

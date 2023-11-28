@@ -1,0 +1,72 @@
+
+
+.mt-11 {
+  margin: 2.75rem auto;
+  width: 80%;
+}
+.user-profile-main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.user-profile-main h2 {
+  margin-left: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: inherit;
+}
+.user-profile-main h2 > a {
+  text-decoration: none;
+  font-size: inherit;
+  font-weight: 700;
+  color: #000;
+}
+.user-form-container {
+  display: flex;
+  max-width: 100%;
+  margin: auto;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0/0.1), 0 1px 2px -1px rgb(0 0 0/0.1);
+  flex-direction: column;
+}
+
+.user-data {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.75rem;
+  padding-bottom: 2rem;
+}
+
+.font-header {
+  width: 10rem;
+  margin-right: 0.5rem;
+}
+.font-header h3 {
+  font-size: inherit;
+}
+.unit-row-hr {
+  margin: 0px;
+}
+
+.user-profile-dalete {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  font-size: inherit;
+}
+.btns {
+  font-weight: 400 !important;
+  font-size: 12px;
+}
+.unit-row-content .font-bold {
+  font-weight: 650;
+  margin-bottom: 3px;
+}
+
+
+@media (max-width: 526px) {
+  .mt-11 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;600&display=swap");
+
+
+
+/* .no-gutters p{
+  margin-bottom: 10px;
+} */
+#form-message-warning {
+  color: red;
+}
+#form-message-success {
+  color: #28a745;
+  font-size: 18px;
+  font-weight: 500;
+}
+.dbox .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #46b5d1;
+    margin: 0 auto;
+      margin-bottom: 0px;
+    margin-bottom: 20px;
+  }
+  .dbox .text {
+    width: 100%;
+  }
+  .dbox p span {
+    font-weight: 500;
+    color: #000;
+  }
+  .dbox p  .contact-add{
+    color: #666666;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: sans-serif;
+
+  }
+
+  .dbox p a {
+    color: #46b5d1;
+    font-family: "googleapis",serif;
+    font-size: 16px;
+  }
+
+.contact-info-1{
+    margin-bottom: 3rem !important;
+    margin-top: 3rem !important;
+    box-shadow: inset 3px 3px  3px 3px #46b5d1;
+}
+.btn.btn-primary {
+    background: #46b5d1 !important;
+    border-color: #46b5d1 !important;
+    color: #fff;
+    padding: 10px 13px;
+  }
+  .btn.btn-primary:hover, .btn.btn-primary:focus {
+    border-color: #2d9bb7 !important;
+    background: #2d9bb7 !important;
+  }
+  .contactForm .label {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .contactForm .form-group {   
+    
+    
+      margin-bottom: 15px;
+      }
+  
+  .contactForm .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.3) !important;
+  }
+  .contactForm .form-control {
+    border: none;
+border-bottom: 1px solid rgba(0, 0, 0, 0.324);
+box-shadow: none !important;
+margin-top: 5px;
+  }
+  #contactForm .error,.success {
+    color: red;
+    font-size: 12px;
+  }
+@media  (max-width: 768px){
+  .contact-wrap{
+    margin: 20px;
+  } 
+ 
+}
+
+

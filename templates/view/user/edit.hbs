@@ -1,0 +1,85 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Codingwallah-is a develop a new contry for coding </title>
+    <script src="https://kit.fontawesome.com/780468c39f.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/respo.css" />
+    <link type="text/css" rel="stylesheet" href="css/userp.css" />
+
+    <style>
+        input {
+            width: 100%;
+            font-weight: 500;
+            border-radius: 4px;
+            font-size: 14px;
+            padding-left: 27px !important;
+            padding: 10px 20px;
+            appearance: textfield;
+            outline: none;
+            color: #111112;
+            border: 1px solid wheat;
+            margin: 10px 0;
+        }
+
+        input[type="submit"] {
+            border: 1px solid rgb(169, 168, 167);
+            background-color: rgb(169, 168, 167);
+        }
+
+        input[type="submit"]:hover {
+            border:
+                1px solid rgb(169, 168, 167);
+            background-color: rgb(240, 239, 238);
+        }
+
+        @media (max-width: 885px) and (min-width: 883px) {
+            .flex-7 {
+                max-width: 100%;
+                height:
+                    54.3vh;
+                align-items: center;
+                display: flex;
+            }
+        }
+
+        @media (max-width: 835px) and (min-width: 700px) {
+            .flex-7 {
+                max-width: 100%;
+                height: 70vh;
+                align-items: center;
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {{>layout}}
+<div class="pt-5"></div>
+    <div class="flex-7 mt-2">
+        <section class="mt-11">
+
+            <div class="user-form-container justify-content-center py-2">
+                <img src="userImages/{{user.image}}" alt="" width="100" height="100" class="d-flex m-auto" />
+                <form action="" method="post" enctype="multipart/form-data"
+                    class="d-flex flex-column m-auto overflow-hidden">
+                    <input type="file" name="image" />
+                    <input type="hidden" name="user_id" value="{{user._id}}" />
+                    <input type="text" name="name" value="{{user.name}}" placeholder="enter name" />
+                    <input type="text" name="email" value="{{user.email}}" placeholder="enter name" />
+
+                    <input type="text" name="number" value="{{user.number}}" placeholder="enter name" />
+
+                    <input type="submit" value="Update" class="mb-3" />
+                </form>
+            </div>
+        </section>
+    </div>
+
+    {{>footer}}
+</body>

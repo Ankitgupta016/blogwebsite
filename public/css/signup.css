@@ -1,0 +1,119 @@
+body{
+      overflow: scroll !important;
+    }
+   
+    .anima{
+      animation: anim   3s  ease-in-out infinite;
+      text-decoration: none;
+    }
+    .web-logo2 {
+      font-family: "Carattere", cursive;
+      font-weight: bolder;
+      color: #e6e600;
+      padding: 4px 0 !important;
+      text-align: center;
+      animation: anim   3s  ease-in-out infinite;
+  
+    }
+    @keyframes anim {
+      0%{
+        color: #e6e600;
+      }
+     30%{
+        color: #fa05fa;
+      }
+      50%{
+        color: #e6003a;
+      }
+      60%{
+        color: #fa1109;
+      }
+      80%{
+        color: #0017e6;
+      }
+      100%{
+        color: #0fe600;
+      }
+    }
+  
+    
+    .signup-form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    
+    
+    }
+    .form-group {   
+    
+    margin: 20px 0px;
+    margin-bottom: 10px;
+    }
+    
+    
+    .input{
+    display: flex;
+    
+    }
+     .input-div{
+        margin: 0 10px;
+        width: 100%;
+     }
+     .custom-file-upload input[type="file"] {
+      display: none;
+      cursor: pointer;
+    }
+     input,.custom-file-upload {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: none;
+    }
+    input[type="submit"], input[type="reset"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 150px;
+    margin: 10px 6px;
+ 
+    
+    }
+    input[type="submit"]:hover,input[type="reset"]:hover{
+     background-color: #07b50d;
+    }
+    
+    .SignUp-page{
+    font-weight: normal;
+    margin-bottom: 12px;
+    padding-top: 5px;
+    
+    }
+
+    .text {
+        font-size: 10px;
+        margin-top: 5px;
+        color: rgb(11, 11, 11);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .SignUp-page-link {
+        color: #102770;
+       
+        cursor: pointer;
+       
+      }
+  @media(max-width:540px){
+  
+   .input-div{
+    margin-bottom: 10px;
+   }
+   .signup-form{
+    padding-top: 10px;
+}
+
+}
+   

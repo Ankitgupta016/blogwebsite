@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>WanderWords-food,health,travel,share market and meny more blog
+    </title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <link type="text/css" rel="stylesheet" href="css/admidash.css" />
+  <link type="text/css" rel="stylesheet" href="css/userp.css" />
+
+</head>
+
+<body>
+  <header class=" header-mobile">
+    <div class="logosec">
+      <div class="logo">
+        <img src="img/logo.png" alt="logo" class="mt-1 mb-2 rounded-2" width="30" height="20" /><span class="web-logo">W</span>ander<span class="web-logo">W</span>ords
+      </div>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png" class="icn menuicn" id="menuicn" alt="menu-icon" />
+    </div>
+    <div class="message">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="icn" alt="" />
+      <div class="dp">
+        <img src="userImages/{{admin.image}}" alt="Your avatar" class="dpicn" alt="dp" />
+      </div>
+    </div>
+  </header>
+  <div class="main-container">
+    <div class="navcontainer">
+      <nav class="nav">
+        <div class="nav-upper-options">
+          <div class="nav-option  text-white">
+            <img src="img/icon.png" class="nav-img" alt="Home" />
+            <a href="/admin/home">
+              <h3>Home</h3>
+            </a>
+          </div>
+          <div class="nav-option ">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png" class="nav-img" alt="dashboard" />
+            <a href="/admin/deshboard">
+              <h3>Dashboard</h3>
+            </a>
+          </div>
+          <div class="option2 nav-option">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img" alt="articles" />
+            <a href="/admin/createpost">
+              <h3>Articles</h3>
+            </a>
+          </div>
+          <div class="nav-option option5">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png" class="nav-img" alt="blog" />
+            <a href="/admin/adminprofile">
+              <h3>Profile</h3>
+            </a>
+          </div>
+          <div class="nav-option logout">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout" />
+            <a href="/admin/logout">
+              <h3>Logout</h3>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class=" main">
+      <section class="mt-11">
+        <h1 class="mb-5 nav-anchor" style="font-size: inherit;">Welcome {{admin.name}}</h1>
+        <div class="user-profile-main">
+          <h2>
+            <span id="profile" class="nav-anchor"></span>Profile
+          </h2>
+         
+        </div>
+        <div class="user-form-container">
+          <div class="user-data">
+            <div class="font-header">
+              <span class="flex justify-between items-center">
+                <h3 data-testid="avatar-unit-row-header" id="profile-picture">Picture</h3>
+              </span>
+            </div>
+            <div class="unit-row-content">
+              <img src="userImages/{{admin.image}}" alt="Your avatar" width="100" height="100" class="rounded-circle" data-testid="avatar-nondefault" />
+            </div>
+          </div>
+          <hr class="unit-row-hr">
+          <div class="user-data">
+            <div class="font-header ">
+              <span class=" d-flex  align-items-center  justify-content-between">
+                <h3 data-testid="display-name-unit-row-header" id="display-name" class="">Name</h3>
+              </span>
+            </div>
+            <div class="unit-row-content">
+              <p class="font-bold " data-testid="display-name-unit-row-header-value">{{admin.name}}</p>
+            </div>
+          </div>
+          <hr class="unit-row-hr">
+          <div class="user-data">
+            <div class="font-header">
+              <span class="flex justify-between items-center">
+                <h3 data-testid="primary-email-unit-row-header" class="">Email</h3>
+              </span>
+            </div>
+            <div class="unit-row-content">
+              <p class="font-bold " data-testid="primary-email-unit-row-header-value">{{admin.email}}</p>
+            </div>
+          </div>
+          <hr class="unit-row-hr ">
+          <div class="user-data">
+            <div class="font-header">
+              <span class="flex justify-between items-center">
+                <h3 data-testid="primary-email-unit-row-header" class="">Mobile</h3>
+              </span>
+            </div>
+            <div class="unit-row-content">
+              <p class="font-bold " data-testid="primary-email-unit-row-header-value">{{admin.number}}</p>
+            </div>
+          </div>
+          <hr class="unit-row-hr mb-1">
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    let menuicn = document.querySelector(".menuicn");
+    let nav = document.querySelector(".navcontainer");
+    menuicn.addEventListener("click", () => {
+      nav.classList.toggle("navclose");
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Codingwallah-is a develop a new contry for coding </title>
+  <script src="https://kit.fontawesome.com/780468c39f.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <link type="text/css" rel="stylesheet" href="css/respo.css" />
+  <link type="text/css" rel="stylesheet" href="css/userp.css" />
+
+
+</head>
+
+<body>
+
+  {{>layout}}
+<div class="pt-5"></div>
+  <div class="flex-7 ">
+    <section class="mt-11">
+      <div class="user-profile-main">
+        <h2>
+          <span id="profile" class="nav-anchor"></span>Profile
+        </h2>
+        <h2 style="margin-right: 1.5rem;">
+          <a href="/edit?id={{user._id}}">Edit</a>
+        </h2>
+      </div>
+
+      <div class="user-form-container">
+
+        <div class="user-data">
+          <div class="font-header">
+            <span class="flex justify-between items-center">
+
+              <h3 data-testid="avatar-unit-row-header" id="profile-picture">Picture</h3>
+            </span>
+          </div>
+
+          <div class="unit-row-content">
+            <img src="/userImages/{{user.image}}" alt="Your avatar" width="100" height="100" class="rounded-circle"
+              data-testid="avatar-nondefault" />
+
+          </div>
+        </div>
+        <hr class="unit-row-hr">
+        <div class="user-data">
+          <div class="font-header ">
+            <span class=" d-flex  align-items-center  justify-content-between">
+              <h3 data-testid="display-name-unit-row-header" id="display-name" class="">Display name
+              </h3>
+            </span>
+          </div>
+          <div class="unit-row-content">
+            <p class="font-bold " data-testid="display-name-unit-row-header-value">{{user.name}}</p>
+          </div>
+
+        </div>
+        <hr class="unit-row-hr">
+        <div class="user-data">
+          <div class="font-header">
+            <span class="flex justify-between items-center">
+              <h3 data-testid="primary-email-unit-row-header" class="">Display
+                email</h3>
+            </span>
+          </div>
+          <div class="unit-row-content">
+            <p class="font-bold " data-testid="primary-email-unit-row-header-value">{{user.email}}
+            </p>
+          </div>
+        </div>
+        <hr class="unit-row-hr ">
+        <div class="user-data">
+          <div class="font-header">
+            <span class="flex justify-between items-center">
+              <h3 data-testid="primary-email-unit-row-header" class="">Display
+                mobile</h3>
+            </span>
+          </div>
+          <div class="unit-row-content">
+            <p class="font-bold " data-testid="primary-email-unit-row-header-value">{{user.number}}
+            </p>
+          </div>
+        </div>
+        <hr class="unit-row-hr ">
+        <div class="user-data">
+          <div class="font-header">
+            <span class="flex justify-between items-center">
+              <h3 data-testid="primary-email-unit-row-header">Verified</h3>
+            </span>
+          </div>
+          <div class="unit-row-content">
+            <p class="font-bold break-all mb-0 " data-testid="primary-email-unit-row-header-value">
+
+              {{#if user.is_verified}}
+              <img src="img/verified.png" alt="verified" width="30" style="color: #00ff80;">
+              {{else}}
+              <i class="fa-sharp fa-solid fa-badge-check" style="color: #ff003c; visibility: hidden;"></i>
+              {{/if}}
+            </p>
+          </div>
+
+        </div>
+
+        <hr class="unit-row-hr mb-1">
+      </div>
+      <div class="user-profile-dalete mt-3 text-white">
+        <h2 style="   margin-left: 1.5rem;">
+          <a href="/logout" class="btn  btns btn-danger " style="margin: auto;">Logout</a>
+        </h2>
+        {{!-- <h2 style="margin-right: 1.5rem;">
+          <a href="/delete-user?id={{user._id}}" class="btn btns btn-danger">Delete account</a>
+        </h2> --}}
+      </div>
+    </section>
+  </div>
+
+  {{>footer}}
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+
+<nav class="navbar navbar-expand-lg  fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/img/logo.png" alt="logo" class=" mt-1 mb-2 rounded-2" width="30" height="20" /><span class="web-logo">W</span>ander<span class="web-logo">W</span>ords</a>
+    <button
+      class="navbar-toggler button"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse in" id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact Us</a>
+        </li>
+
+      </ul>
+
+       <form class="d-flex align-items-center" role="search">
+        <input class="form-control me-2  text-white email-sub" type="text" placeholder="Search this blog....." aria-label="Search"
+          style="outline: none;box-shadow: none;">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> 
+    </div>
+
+  </div>
+  <div class="my-auto d-flex" id="afterLogin ">
+    {{#if user}}
+
+      <a
+        href="/userprofile"
+        class="btn-login text-decoration-none userdata"
+        id="logout_top"
+      >
+        <img
+          src="/userImages/{{user.image}}"
+          alt="{{user.image}}"
+          width="30"
+          height="30"
+          class="rounded-circle"
+          title="{{user.name}}"
+        />
+      </a>
+   
+    {{else}}
+      <a href="/signin" class="text-decoration-none" id="login_top">
+        <button type="button" class="btn-login">Sign&nbsp;in</button>
+      </a>
+    {{/if}}
+  </div>
+</nav>
+
+
+  <script src="../jq/jquery.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.js" type="text/javascript"></script>
+

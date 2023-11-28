@@ -1,0 +1,209 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="image" content="img/apple-touch-icon.png" />
+    <meta name="author" content="Ankit gupta" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>WanderWords-food,health,travel,share market and meny more blog
+    </title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="css/admidash.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <header>
+
+      <div class="logosec">
+        <div class="logo">
+          <img
+            src="img/logo.png"
+            alt="logo"
+            class="mt-1 mb-2 rounded-2"
+            width="30"
+            height="20"
+          /><span class="web-logo">W</span>ander<span
+            class="web-logo"
+          >W</span>ords
+        </div>
+        <img
+          src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+          class="icn menuicn"
+          id="menuicn"
+          alt="menu-icon"
+        />
+      </div>
+
+      <div class="message">
+
+        <img
+          src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+          class="icn"
+          alt=""
+        />
+        <div class="dp">
+          <img
+            src="userImages/{{admin.image}}"
+            alt="Your avatar"
+            class="dpicn"
+            alt="dp"
+          />
+        </div>
+      </div>
+
+    </header>
+
+    <div class="main-container">
+
+      <div class="navcontainer">
+        <nav class="nav">
+          <div class="nav-upper-options">
+             <div class="nav-option option1 text-white">
+              <img
+                src="img/icon.png"
+                class="nav-img"
+                alt="Home"
+              />
+              <a href="/admin/home" ><h3>Home</h3></a>
+
+            </div>
+
+            <div class="nav-option">
+              <img
+                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+                class="nav-img"
+                alt="dashboard"
+              />
+              <a href="/admin/deshboard" ><h3>Dashboard</h3></a>
+
+            </div>
+
+            <div class="option2 nav-option">
+              <img
+                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
+                class="nav-img"
+                alt="articles"
+              />
+          <a href="/admin/createpost" >
+                <h3 > Articles</h3>
+              </a>
+            </div>
+
+            <div class="nav-option option5">
+              <img
+                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+                class="nav-img"
+                alt="blog"
+              />
+             <a href="/admin/adminprofile">
+                <h3> Profile</h3>
+              </a>
+            </div>
+            <div class="nav-option logout">
+              <img
+                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
+                class="nav-img"
+                alt="logout"
+              />
+              <a href="/admin/logout">
+                <h3>Logout</h3>
+              </a>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+      <div class="main">
+
+        <div class="box-container">
+
+          <div class="box box1">
+            <div class="text">
+              <h2 class="topic-heading">{{totalViews}}</h2>
+              <h2 class="topic">Article Views</h2>
+            </div>
+
+            <img
+              src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
+              alt="Views"
+            />
+          </div>
+
+          <div class="box box2">
+            <div class="text">
+              <h2 class="topic-heading">{{totalLike}}</h2>
+              <h2 class="topic">Likes</h2>
+            </div>
+
+            <img
+              src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
+              alt="likes"
+            />
+          </div>
+
+          <div class="box box3">
+            <div class="text">
+              <h2 class="topic-heading">{{totalComments}}</h2>
+              <h2 class="topic">Comments</h2>
+            </div>
+
+            <img
+              src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
+              alt="comments"
+            />
+          </div>
+
+        </div>
+
+      <div class="report-container">
+  <div class="report-header">
+    <h1 class="recent-Articles">Recent Articles</h1>
+    <button class="view">View All</button>
+  </div>
+
+  <div class="report-body">
+    <div class="report-topic-heading">
+      <h3 class="t-op">Article</h3>
+      <h3 class="t-op">Views</h3>
+      <h3 class="t-op">Comments</h3>
+     
+    </div>
+
+    <div class="items">
+      {{#each blogPosts}}
+      <div class="item1">
+        <h3 class="t-op-nextlvl">{{ this.title }}</h3>
+        <h3 class="t-op-nextlvl">{{ this.views }}</h3>
+        <h3 class="t-op-nextlvl">{{ this.comments.length }}</h3>
+      
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      let menuicn = document.querySelector(".menuicn"); let nav =
+      document.querySelector(".navcontainer"); menuicn.addEventListener("click",
+      () => { nav.classList.toggle("navclose"); })
+
+
+
+
+
+
+
+    const links = document.querySelectorAll("a");
+
+
+
+  </script>
+</body>
+</html>

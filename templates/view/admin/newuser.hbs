@@ -1,0 +1,121 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>WanderWords-food,health,travel,share market and meny more blog
+    </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+ 
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <script src="https://kit.fontawesome.com/780468c39f.js" crossorigin="anonymous"></script>
+  
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <link type="text/css" rel="stylesheet" href="css/respo.css" />
+  <link type="text/css" rel="stylesheet" href="css/signup.css" />
+  <style>
+    body{
+      overflow: hidden;
+    }
+      .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+
+
+  .card-1,
+  .card-2 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  </style> 
+</head>
+<body>
+ <div class="signup-container newuser" >
+    <div class="center">
+      <div class="card-1">
+        <img src="https://images.unsplash.com/photo-1475669698648-2f144fcaaeb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTN8fGVkdWNhdGlvbiUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"alt="logo" />
+      </div>
+      <div class="card-2">
+        <h3 class="mb-3">Add New User</h3>
+        <form class="signup-form" action="signup" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+
+
+            <div class="input">
+              <div class="input-div">
+
+                <label for="name" style="text-align: start;">Full Name</label>
+                <input type="text" name="name" id="name" placeholder="Your Name" required />
+              </div>
+              <div class="input-div">
+
+                <label for="image" style="text-align: start;">Profile Picture</label>
+                <label class="custom-file-upload" style="text-align: start; padding: ; padding-left: 14px !important;">
+                  <input type="file" name="image" id="image" accept="image/*" onchange="showFileName()"
+                    class="form-control shadow-none">
+                  <span id="file-name" style="opacity: 0.5;">Upload profile picture</span>
+                </label>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="input">
+              <div class="input-div">
+                <label for="Number" style="text-align: start;">Number</label>
+                <input type="number" name="number" id="number" placeholder="Your Number" maxLength="10" minLength="10"
+                  required />
+              </div>
+
+              <div class="input-div">
+                <label for="Email" style="text-align: start;">Email</label>
+                <input type="email" name="email" id="email" placeholder="Your Email" required />
+              </div>
+            </div>
+          </div>
+
+    
+          <input type="submit" value="Add User" />
+          <br />
+           <div class="SignUp-page">
+        <a class="SignUp-page-link" href="/admin/deshboard">
+        Go Back To Dashboard
+        </a>
+      </div>
+     {{#if error}}
+      <p style="font-weight: 500; color:rgb(255, 6, 6)">{{this.error}}</p>
+      {{else}}
+      <p style="font-weight: 500; color:rgb(60, 255, 6)">{{message}}</p>
+      {{/if}}
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+    function showFileName() {
+      var input = document.getElementById('image');
+      var fileName = input.value.split('\\').pop();
+      var fileNameSpan = document.getElementById('file-name');
+
+      if (fileName) {
+        fileNameSpan.innerHTML = fileName;
+      } else {
+        fileNameSpan.innerHTML = 'Upload profile picture';
+      }
+    }
+
+  </script>
+  <script src="../jq/jquery.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.js" type="text/javascript"></script>
+</body>
+
+</html>

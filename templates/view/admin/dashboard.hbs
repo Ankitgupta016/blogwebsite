@@ -1,0 +1,124 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="image" content="img/apple-touch-icon.png" />
+    <meta name="author" content="Ankit gupta" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+  <title>WanderWords-food,health,travel,share market and meny more blog
+    </title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/780468c39f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .home { font-family: "Roboto Slab", serif; font-size: 14px;
+      text-decoration: none; background: #189cf0; display: inline-block;
+      padding: 8px 9px; border: 2px solid transparent; border-radius: 9px;
+      color: #fff; font-weight: 400; -webkit-transition: 0.2s all; transition:
+      0.2s all; text-align: center; margin-left: 10px; } .home:hover {
+      background: #fff; border-color: #189cf0; color: #189cf0; } td, th {
+      border: 1px solid #888585; padding: 3px; } a { text-decoration: none; }
+      input[type="text"] { padding: 6px 12px; border-radius: 5px; outline: none;
+      box-shadow: none; border: 1px solid #ced4da; display: block; }
+      input[type="submit"] { background: none; border: 1px solid #198754; color:
+      rgb(14, 13, 13); padding: 0px 9px; border-radius: 5px; transition: 1s all;
+      } input[type="submit"]:hover { background-color: #198754; border-color:
+      #198754; color: white; } .h1 { margin-left: 1.5rem; font-weight: 700;
+      margin-bottom: 1rem; font-size: inherit; }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="my-3 mx-1">
+
+      <h1 class="h1"> Admin&nbsp;Dashboard</h1>
+      <br />
+      <div class="d-flex justify-content-between px-3 mb-3 align-items-center">
+        <a href="/admin/newuser"> Add&nbsp;User</a>
+
+        <form class="d-flex">
+          <input
+            type="text"
+            class="me-2"
+            name="search"
+            placeholder="Search User....."
+          />
+          <input type="submit" value="Search" />
+
+        </form>
+        <a href="/admin/exportdata">Export&nbsp;Data</a>
+      </div>
+
+      <table style="width: 100%;text-align: center;border: 2px solid #888585;">
+        <thead>
+          <tr>
+             <th>S.no.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Image</th>
+            <th>Verified</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#if users.length}}
+            {{#each users}}
+              <tr>
+                 <td>{{@index}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.number}}</td>
+                <td>
+                  <img
+                    src="userImages/{{this.image}}"
+                    alt="{{this.image}}"
+                    width="60px"
+                    height="50px"
+                  />
+                </td>
+                <td>
+                  {{#if is_verified}}
+                    <p style="color: green;margin-bottom: 0rem;">Verified</p>
+
+                  {{else}}
+                    <p style="color: red; margin-bottom: 0rem;">Not Verified</p>
+
+                  {{/if}}
+                </td>
+                <td>
+                  <a href="/admin/edit-user?id={{this._id}}"><i
+                      class="fa-solid fa-pen"
+                      style="color: #00ff00;"
+                      title="edit"
+                    ></i></a>
+                  &nbsp; &nbsp;
+                  <a href="/admin/delete-user?id={{this._id}}"><i
+                      class="fa fas fa-trash"
+                      title="dalete"
+                      style="color: #ff0000;"
+                    ></i></a>
+
+                </td>
+              </tr>
+            {{/each}}
+          {{else}}
+            <tr>
+              <th colspan="5">User Not Found</th>
+            </tr>
+          {{/if}}
+        </tbody>
+      </table>
+    </div>
+    <a class="home" href="/admin/home">Back To Homepage</a>
+  </body>
+
+</html>

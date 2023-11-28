@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="image" content="img/apple-touch-icon.png">
+  <meta name="author" content="Ankit gupta">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Codingwallah-is a develop a new contry for coding </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../icons/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/780468c39f.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/respo.css">
+    <link type="text/css" rel="stylesheet" href="css/forget.css">
+  <link rel="stylesheet" href="css/respo.css">
+
+</head>
+
+
+<body onload="myFunction()">
+  <!-- PreLoader -->
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="circle"></div>
+    </div>
+  </div>
+  <!-- PreLoader Ends -->
+
+  <script>
+    function myFunction() {
+      const loader = document.getElementsByClassName("loader")[0];
+      loader.style.display = "none";
+    }
+  </script>
+  {{>layout}}
+
+<div class="pt-5"></div>
+  <div class="signin-form-container">
+    <form class="signin-form" action="forget" method="post">
+      <img src="img/logo.png" alt="logo" class=" mt-1 mb-2 rounded-2" width="130" />
+      <div class="mb-3 text-white">
+        <p>Please enter the email address you'd like <br> your password reset information sent to </p>
+      </div>
+      <div class="form-group-login">
+        <input type="email" name="email" id="email" class="form-control shadow-none" placeholder="Enter your email" />
+        <i class="far fa-at input-icon " style="top: 0px ; font-size: 19px; "></i>
+
+      </div>
+      <div class="mb-3 d-flex justify-content-center align-items-center">
+        <input class=" btn btn-primary text-center shadow-none " type="submit" value="Reset password">
+      </div>
+
+      <div class="mb-3">
+        <p class=" text-center text-white">Back a signin Page<a href="/signin"> Sign in</a></p>
+      </div>
+
+      <div class="mb-3">
+        {{#if error}}
+        <p style="color: rgb(252, 21, 5);">{{this.error}}</p>
+
+        {{else}}
+        <p style="color: green;">{{message}}</p>
+        {{/if}}
+      </div>
+    </form>
+
+  </div>
+
+  {{>footer}}
+ 
+
+</body>
+
+</html>
