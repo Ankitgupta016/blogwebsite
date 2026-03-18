@@ -14,6 +14,7 @@ router.use(
   })
 );
 
+
 const checkAuth = (req, res, next) => {
   if (req.session.user_id) {
     UserData.findById(req.session.user_id)
@@ -118,23 +119,26 @@ router.get("/blog/:id", async (req, res) => {
   }
 });
 
-router.post("/blog/:id", authenticateUser, async (req, res) => {
+router.post("/blog/:id/like", authenticateUser, async (req, res) => {
   try {
     const postId = req.params.id;
-    const userId = req.user.id; // Assuming you have user authentication and can access the user ID
+   
+    const userId = req.user.id; 
+ 
 
     const post = await Blogpost.findById(postId);
+  
     if (!post) {
       return res.status(404).send("Post not found");
     }
 
     if (post.likedBy.includes(userId)) {
-      // User has already liked the post, handle accordingly (e.g., display message)
+      
       return res.redirect(`/blog/${postId}`);
     }
 
     if (post.dislikedBy.includes(userId)) {
-      // User has previously disliked the post, remove dislike
+      
       post.dislikes--;
       post.dislikedBy.pull(userId);
     }
@@ -151,12 +155,17 @@ router.post("/blog/:id", authenticateUser, async (req, res) => {
   }
 });
 
-router.post("/blog/:id", authenticateUser, async (req, res) => {
+router.post("/blog/:id/dislike", authenticateUser, async (req, res) => {
   try {
     const postId = req.params.id;
+   
+   
     const userId = req.user.id; // Assuming you have user authentication and can access the user ID
+ 
+   
 
     const post = await Blogpost.findById(postId);
+  
     if (!post) {
       return res.status(404).send("Post not found");
     }

@@ -2,7 +2,7 @@
 
 <html>
 
-<head>
+<head>  
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta property="image" content="img/apple-touch-icon.png" />
@@ -34,7 +34,7 @@
         document.getElementsByClassName("loader")[0]; loader.style.display =
           "none";
     }
-    </script>
+  </script>
 </head>
 
 <body onload="myFunction()">
@@ -53,7 +53,8 @@
     <div class="ps-5 d-flex align-items-center text-white" style="background: #f60; height:105px;">
       <h1>{{post.title}}</h1>
     </div>
-    <p class="pt-3 px-md-5" style="font-size: inherit; opacity: 0.6;color: #aab8c2; font-style:italic">Posted by Admin</p>
+    <p class="pt-3 px-md-5" style="font-size: inherit; opacity: 0.6;color: #aab8c2; font-style:italic">Posted by Admin
+    </p>
     <p class="py-1 px-md-5" style="font-size: inherit; opacity: 0.6;color: #aab8c2;">Published on: {{post.Date}}</p>
     <div class="container w-md-50 text-start">
     </div>
@@ -65,24 +66,26 @@
         <div>
 
           <div class="card mb-4 border-0">
-      <img class=" mb-3"  src="/userImage/{{post.image}}" class="card-img-top" alt="Image 1"  />
+            <img class=" mb-3" src="/userImage/{{post.image}}" class="card-img-top" alt="Image 1" />
 
             <p id="postContent">{{post.content}}</p>
             <!-- HTML template -->
             <div class="like-dislike-container d-flex">
-              <form action="/blog/{{post._id}}" method="POST">
-                <button  class="" id="formsumbitlike">
+              <form action="/blog/{{post._id}}/like" method="POST">
+                <button type="submit" class="" id="formsumbitlike">
                   <i class="fas fa-thumbs-up like-button"></i>
                 </button>
                 <span>{{post.likes}}</span>
               </form>
-              <form action="/blog/{{post._id}}" method="POST">
+              <form action="/blog/{{post._id}}/dislike" method="POST">
                 <button type="submit" class="">
                   <i class="fas fa-thumbs-down dislike-button"></i>
                 </button>
                 <span>{{post.dislikes}}</span>
               </form>
             </div>
+
+
 
           </div>
           <div class="all-comment-container border border-1 p-3">
@@ -91,8 +94,7 @@
             <div class="show-comment mb-4 d-flex align-items-center">
 
               <img src="/userImages/{{this.user.image}}" alt="{{this.user.image}}" width="40" height="40"
-                class="rounded-circle" 
-                title="{{this.user.email}}" style="cursor: pointer;"/>
+                class="rounded-circle" title="{{this.user.email}}" style="cursor: pointer;" />
               <div class="show ps-2">
                 <d class="username" style="font-weight: normal !important;  font-family: 'Roboto';">{{this.user.name}}
                 </d>
@@ -103,8 +105,8 @@
 
             <!-- Comment submission form -->
             <div class="post-comment ">
-              <form  id="commentForm">
-              <input hidden type="text" name="post_id" value="{{post._id}}">
+              <form id="commentForm">
+                <input hidden type="text" name="post_id" value="{{post._id}}">
                 <input class="  w-100 mt-4 mb-3 py-4 px-2" type="text" name="comment" style="height: 60px;"
                   placeholder="Add a comment..." required />
                 <button type="submit" class=" btn btn-primary d-flex ms-auto  ">Submit</button>
@@ -125,7 +127,7 @@
               and ideas with the world.</p>
           </div>
         </div>
-       
+
         <div class="card mb-4">
           <div class="card-body">
             <h4 class="card-title">Categories</h4>
@@ -164,7 +166,7 @@
         {{#each recentPosts}}
         <div class="col-md-4 p-3">
           <div class="card">
-             <img src="/userImage/{{image}}" class="card-img-top" alt="Image " />
+            <img src="/userImage/{{image}}" class="card-img-top" alt="Image " />
             <div class="card-body">
               <h5 class="card-title">{{title}}</h5>
               <p class="card-text">{{content}}</p>
@@ -185,7 +187,7 @@
   <!-- Add additional HTML and styling as needed -->
   {{>footer}}
   <script>
-    
+
 
     document.addEventListener("DOMContentLoaded", function () {
       const cardTextElements = document.getElementsByClassName("card-text");
@@ -196,27 +198,27 @@
       });
     });
 
-$(document).ready(function () {
-  $("#commentForm").submit(function (event) {
-    event.preventDefault();
-    var formdata = $(this).serialize();
+    $(document).ready(function () {
+      $("#commentForm").submit(function (event) {
+      
+        var formdata = $(this).serialize();
 
-    $.ajax({
-      url: "/comment/{{post._id}}",
-      type: "POST",
-      data: formdata,
-      success: function (data) {
-        $(".com-status").text(data.msg);
-        setTimeout(function () {
-          $(".com-status").text("");
-        }, 5000);
-      },
+        $.ajax({
+          url: "/comment/{{post._id}}",
+          type: "POST",
+          data: formdata,
+          success: function (data) {
+            $(".com-status").text(data.msg);
+            setTimeout(function () {
+              $(".com-status").text("");
+            }, 5000);
+          },
+        });
+
+
+        $(this).trigger("reset");
+      });
     });
-   
-   
-    $(this).trigger("reset");
-  });
-});
 
   </script>
 

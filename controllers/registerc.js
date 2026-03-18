@@ -199,14 +199,14 @@ const verifylogin = async (req, res) => {
   }
 };
 
-//***  Homepage load method ***//
 const loadHome = async (req, res) => {
-  try {
+   try {
     res.render("home");
+    console.log("Home page loaded successfully");
   } catch (error) {
-   
+       console.log("Home page not  loaded successfully");
   }
-};
+}
 //*** userlogout method ***//
 const userLogout = async (req, res) => {
   try {

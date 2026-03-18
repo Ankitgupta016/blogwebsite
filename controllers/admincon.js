@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const randomstring = require("randomstring");
 const exceljs = require("exceljs");
 const Post = require("../models/blogpost.js");
-const { post } = require("jquery");
+const { post, error } = require("jquery");
 
 
 //*** For admin  Reset password  send mail ***//
@@ -75,7 +75,9 @@ const verifyadmin = async (req, res) => {
       if (passwordMatch) {
         if (adminData.is_admin === 0) {
           res.render("login", { error: "Email And password is incorrent" });
-        } else {
+        
+
+        } else {       
           req.session.user_id = adminData._id;
           res.redirect("/admin/home");
         }
@@ -159,7 +161,7 @@ const securepassword = async (password) => {
     return passwordHash;
   } catch (error) {
     console.log(error);
-    throw error;
+    throw error; 
   }
 };
 //*** resetPassword method ***//

@@ -211,6 +211,9 @@ footer a {
   animation: none;
 }
 
+
+
+
 @-webkit-keyframes spinLeft {
   from {
     -webkit-transform: rotate(0deg);
